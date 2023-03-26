@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <style>
+        #p:hover,#i1:hover,#i2:hover,#i3:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="p" onmouseover="paraOver()" onmouseout="paraOut()">DOM stands for Document Object Model</p>
+    <button id="btn" onmouseover="btnOver()" onmouseout="btnOut()">Here !!</button>
+    <br/><br/>
+    <input type="text" id="txt">
+    <button id="btn" onclick="para()">Click Here</button>
+    <br/>
+    <ul>
+        <li id="i1" onmouseover="listOver1()" onmouseout="listOut1()">Apple</li>
+        <li id="i2" onmouseover="listOver2()" onmouseout="listOut2()">Banana</li>
+        <li id="i3" onmouseover="listOver3()" onmouseout="listOut3()">Grape</li>
+    </ul>
+    <script src="script.js"></script>
+</body>
+</html>

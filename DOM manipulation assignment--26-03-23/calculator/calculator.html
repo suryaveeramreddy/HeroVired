@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calbody
+        {
+            height:650px;
+            width:400px;
+            padding:0%;
+            border-radius:25px;
+            background-color:black;
+        }
+        .display
+        {
+            height:150px;
+            width:400px;
+            border-radius:20px;
+        }
+        .exp
+        {
+            color:white;
+        }
+        .row1
+        {
+            display:flex;
+        }
+        .row1 .btn
+        {
+            height:100px;
+            width:100px;
+            color:black;
+            font-size: large;
+            background-color:white;
+            border-radius:50px;
+        }
+        .row2
+        {
+            display:flex;
+        }
+        .row2 .btn
+        {
+            height:90px;
+            width:100px;
+            background-color: rgb(168, 165, 165);
+            color:white;
+            font-size: large;
+            border-radius:50px;
+        }
+        .row3
+        {
+            display:flex;
+        }
+        .row3 .btn
+        {
+            height:100px;
+            width:100px;
+            background-color: rgb(168, 165, 165);
+            color:white;
+            font-size: large;
+            border-radius:50px;
+        }
+        .row4
+        {
+            display:flex;
+        }
+        .row4 .btn
+        {
+            height:100px;
+            width:100px;
+            background-color: rgb(168, 165, 165);
+            color:white;
+            font-size: large;
+            border-radius:50px;
+        }
+        .row5
+        {
+            display:flex;
+        }
+        .row5 .btn
+        {
+            height:100px;
+            width:100px;
+            background-color: white;
+            color:black;
+            font-size: large;
+            border-radius:50px;
+            border:"none";
+        }
+        .btn:hover
+        {
+            background-color:violet;
+        }
+    </style>
+</head>
+<body>
+    <div class="calbody">
+        <div class="display" style="padding-top: 10px;padding-left: 10px;">
+            <h4 id="display1" style="color:white;font-size: 25px;"></h4>
+        </div>
+        <div class="row1">
+            <button class="btn" onclick="clr()">C</button>
+            <button class="btn" onclick="back_space()">X</button>
+            <button class="btn" onclick="evalfun('%')">%</button>
+            <button class="btn" style="background-color:orange;color:black;" onclick="evalfun('/')">/</button>
+        </div>
+        <div class="row2">
+            <button class="btn" onclick="evalfun('7')">7</button>
+            <button class="btn" onclick="evalfun('8')">8</button>
+            <button class="btn" onclick="evalfun('9')">9</button>
+            <button class="btn" style="background-color:orange;color:black;" onclick="evalfun('*')">*</button>
+        </div>
+        <div class="row3">
+            <button class="btn" onclick="evalfun('4')">4</button>
+            <button class="btn" onclick="evalfun('5')">5</button>
+            <button class="btn" onclick="evalfun('6')">6</button>
+            <button class="btn" style="background-color:orange;color:black;" onclick="evalfun('-')">-</button>
+        </div>
+        <div class="row4">
+            <button class="btn" onclick="evalfun('1')">1</button>
+            <button class="btn" onclick="evalfun('2')">2</button>
+            <button class="btn" onclick="evalfun('3')">3</button>
+            <button class="btn" style="background-color:orange;color:black;" onclick="evalfun('+')">+</button>
+        </div>
+        <div class="row5">
+            <button class="btn" style="width:200px" onclick="evalfun('0')">00</button>
+            <button class="btn" onclick="evalfun('.')">.</button>
+            <button class="btn" style="background-color:orange;color:black;" onclick="print()">=</button>
+        </div>
+
+    </div>
+    <script>
+        var s="";
+        var d=document.getElementById("display1");
+        function evalfun(ele)
+        {
+            s+=ele;
+            d.innerText=s;
+        }
+        function print()
+        {
+            if(s.length>31)
+            {
+                window.alert("Cannot evaluate");
+                s="";
+            }
+           let c=eval(s);
+           s=c;
+           if(s=="Infinity")
+           {
+            window.alert("inavlied functionality");
+            s="";
+           }
+           d.innerText=s;
+        }
+        function clr()
+        {
+            s="";
+            d.innerHTML=s;
+        }
+        function back_space()
+        {
+            s=s.split("");
+            s.pop();
+            s=s.join("");
+            d.innerText=s;
+        }
+    </script>
+</body>
+</html>
