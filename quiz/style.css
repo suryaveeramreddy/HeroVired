@@ -1,6 +1,6 @@
 .head{
     text-align: center;
-    color: rgb(253, 237, 116);
+    color: rgb(83, 7, 7);
 }
 h1{
     color: white;
@@ -8,7 +8,7 @@ h1{
 body{
     gap:60px;
     width: 100%;
-    background-color: rgb(61, 83, 91);
+    background-color: rgb(202, 242, 82);
 }
 .body{
     margin-left: 4%;
@@ -22,9 +22,10 @@ body{
     position: relative;
 }
 .que{
-    color: white;
+    color: rgb(7, 7, 7);
     font-size: 25px;
     font-weight: bold;
+    justify-self: center;
 }
 .opt{
     font-weight: bolder;
@@ -39,15 +40,18 @@ button{
     border-radius: 5px;
 }
 button:hover{
-    background: rgb(78, 77, 77);
-    color: aliceblue;
+    background: rgb(213, 50, 238);
+    color: rgb(237, 241, 244);
 }
 .ans label{
-    color: aliceblue;
+    color: rgb(254, 254, 254);
     text-transform: capitalize;
     cursor: pointer;
 }
 .body span{
     font-size: 30px;
-    color: azure;
+    color: rgb(1, 8, 8);
+}
+.ans label:hover{
+    color:yellow;
 }
