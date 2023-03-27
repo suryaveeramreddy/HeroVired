@@ -69,5 +69,322 @@ public class Solution {
     }
 }
 
-3)
+3)Java Subarray
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        int n;
+        Scanner in=new Scanner(System.in);
+        n=in.nextInt();
+        int count=0;
+        int a[]=new int[n];
+        int b[]=new int[n];
+        for(int i=0;i<n;i++)
+        a[i]=in.nextInt();
+        for(int i=0;i<a.length;i++)
+        {
+            int c=0;
+            for(int j=i;j<a.length;j++)
+            {
+                c+=a[j];
+                if(c<0)
+                count+=1;
+            }
+        }
+        System.out.println(count);
+    }
+}
+
+4)Java ArrayList
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        List<List<Integer>> a=new ArrayList<>();
+        for(int i=0;i<n;i++)
+        {
+            ArrayList<Integer> b=new ArrayList<>();
+            int d=in.nextInt();
+            for(int j=0;j<d;j++)
+            {
+                int val=in.nextInt();
+                b.add(val);
+            }
+            a.add(b);
+        }
+        int q=in.nextInt();
+        for(int i=0;i<q;i++)
+        {
+            int x=in.nextInt();
+            int y=in.nextInt();
+            if(x>a.size())
+            {
+                System.out.println("ERROR!");
+            }
+            else
+            {
+                int s=a.get(x-1).size();
+                if(y>s)
+                {
+                    System.out.println("ERROR!");
+                }
+                else
+                {
+                    System.out.println(a.get(x-1).get(y-1));
+                }
+            }
+        }
+    }
+}
+
+6)Java List
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        int n;
+        Scanner in=new Scanner(System.in);
+        n=in.nextInt();
+        List<Integer> l=new ArrayList<>();
+        for(int i=0;i<n;i++)
+        l.add(in.nextInt());
+        int t;
+        t=in.nextInt();
+        for(int i=0;i<t;i++)
+        {
+            String s;
+            s=in.next();
+            if(s.charAt(0)=='I')
+            {
+                int a,b;
+                a=in.nextInt();
+                b=in.nextInt();
+                l.add(a,b);
+            }
+            else if(s.charAt(0)=='D')
+            {
+                int c;
+                c=in.nextInt();
+                l.remove(c);
+            }
+        }
+        for(int i=0;i<l.size();i++)
+        System.out.print(l.get(i)+" ");
+        
+    }
+}
+
+7)Java Stack
+import java.util.*;
+class Solution{
+	
+	public static void main(String []argh)
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		while (sc.hasNext()) {
+			String input=sc.next();
+            //Complete the code
+            Stack<Character> st=new Stack<>();
+            int flag=1;
+            for(int i=0;i<input.length();i++)
+            {
+                if(input.charAt(i)=='{' || input.charAt(i)=='[' || input.charAt(i)=='(')
+                {
+                    st.push(input.charAt(i));
+                }
+                else
+                {
+                    if(st.size()==0)
+                    {
+                        flag=0;
+                        break;
+                    }
+                    char k=st.peek();
+                    
+                    if(input.charAt(i)=='}' && ( k=='[' || k=='('))
+                    {
+                        flag=0;
+                        break;
+                    }
+                    else if(input.charAt(i)==']' && ( k=='{' || k=='('))
+                    {
+                        flag=0;
+                        break;
+                    }
+                    else if(input.charAt(i)==')' && ( k=='{' || k=='['))
+                    {
+                        flag=0;
+                        break;
+                    }
+                    else
+                    {
+                        st.pop();
+                    }
+                }
+            }
+            if(st.size()!=0)
+            {
+                flag=0;
+            }
+            if(flag==0)
+            {
+                System.out.println(false);
+            }
+            else
+            {
+                
+                System.out.println(true);
+            }
+		}
+		
+	}
+}
+
+8)Java Hashset
+
+
+//Write your code here
+Set<String> a=new HashSet<>();
+for(int i=0;i<t;i++)
+{
+    a.add(pair_left[i]+" "+pair_right[i]);
+    System.out.println(a.size());
+}
+
+9)Java Comparator
+import java.util.*;
+
+// Write your Checker class here
+class Checker implements Comparator<Player>
+{
+    public int compare(Player p1,Player p2)
+    {
+        if(p1.score==p2.score)
+        {
+            return(p1.name.compareTo(p2.name));
+        }
+        else{
+            return p2.score-p1.score;
+        }
+    }
+}
+class Player{
+    String name;
+    int score;
+    
+    Player(String name, int score){
+        this.name = name;
+        this.score = score;
+    }
+}
+
+class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+
+        Player[] player = new Player[n];
+        Checker checker = new Checker();
+        
+        for(int i = 0; i < n; i++){
+            player[i] = new Player(scan.next(), scan.nextInt());
+        }
+        scan.close();
+
+        Arrays.sort(player, checker);
+        for(int i = 0; i < player.length; i++){
+            System.out.printf("%s %s\n", player[i].name, player[i].score);
+        }
+    }
+}
+
+
+11)Java sort
+import java.util.*;
+
+class Student{
+	private int id;
+	private String fname;
+	private double cgpa;
+	public Student(int id, String fname, double cgpa) {
+		super();
+		this.id = id;
+		this.fname = fname;
+		this.cgpa = cgpa;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getFname() {
+		return fname;
+	}
+	public double getCgpa() {
+		return cgpa;
+	}
+}
+
+//Complete the code
+class CustomSort implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+        if(s1.getCgpa()==s2.getCgpa())
+        {
+            if(s1.getFname().equals(s2.getFname())==false){
+                return(s1.getFname().compareTo(s2.getFname()));
+            }
+            else{
+                return s1.getId()-s2.getId();
+            }
+        } 
+        else{
+            return(Double.compare(s2.getCgpa(),s1.getCgpa()));
+        }         
+    }
+}
+public class Solution
+{
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		int testCases = Integer.parseInt(in.nextLine());
+		
+		List<Student> studentList = new ArrayList<Student>();
+		while(testCases>0){
+			int id = in.nextInt();
+			String fname = in.next();
+			double cgpa = in.nextDouble();
+			
+			Student st = new Student(id, fname, cgpa);
+			studentList.add(st);
+			
+			testCases--;
+		}
+        Collections.sort(studentList,new CustomSort());
+      	for(Student st: studentList){
+			System.out.println(st.getFname());
+		}
+	}
+}
+
+
+
+
 
