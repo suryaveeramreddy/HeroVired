@@ -1,27 +1,27 @@
 que = [
     {
-        question:"In which year India won one day cricket world cup?",
-        Options:['2015','2011','2019','2007'],
-        ans:1
+        question:"What is the full form of FSD",
+        Options:['Full stack development','Free stack development','Full safety development','Full safe Developer'],
+        ans:0
     },
     {
-        question:"Who was the Captain of Indian Cricket team in 2011 world cup?",
-        Options:['Kohli','Rohith','Dhoni','Sachin'],
+        question:"Which style is given more priority",
+        Options:['inline','internal','external','inios'],
+        ans:0
+    },
+    {
+        question:"Which symbol indicates universal selector",
+        Options:['/','|','*','-'],
         ans:2
     },
     {
-        question:"Which IPL team has heighest number of IPL trophies?",
-        Options:['CSK','SRH','MI','RCB'],
-        ans:2
-    },
-    {
-        question:"How many one day cricket world cups won by India?",
-        Options:['3','4','1','2'],
+        question:"Which method removes first element in array in JS",
+        Options:['pop','push','poll','shift'],
         ans:3
     },
     {
-        question:"who is Captain of present Indian Cricket team",
-        Options:['rohith','kohli','dhoni','hardik'],
+        question:"Which method will element at the starting in JS",
+        Options:['unshift','shift','push','pop'],
         ans:0
     }
 ]
