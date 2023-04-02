@@ -1,0 +1,47 @@
+Question 3: Exception Handling in Java
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int x,y;
+        try{
+        x=s.nextInt();
+        y=s.nextInt();
+        System.out.println(x/y);
+        }
+        catch (InputMismatchException e){
+
+    System.out.println("java.util.InputMismatchException");
+
+}
+catch (Exception e){
+    System.out.println(e);
+}
+    }
+}
+
+
+
+
+Question 4: Exception Handling in Java
+
+class MyCalculator {
+   public long power(int n, int p) throws Exception{
+    long result;
+    if(n==0 && p==0){
+        throw new Exception("n and p should not be zero.");
+    }
+    if(n<0 || p<0){
+        throw new Exception("n or p should not be negative.");
+    }
+         result=(long)Math.pow(n,p);
+         return result;
+}
+}
