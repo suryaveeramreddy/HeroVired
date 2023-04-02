@@ -1,0 +1,23 @@
+import java.util.Scanner;
+ class Main{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        char c;
+        do{
+            System.out.println("----Menu based app-Even/Odd Checker----");
+            System.out.print("Please enter the number:: ");
+            int a=in.nextInt();
+            if(a%2==0)
+            {
+                System.out.println("The given number :: "+a+" is an EVEN Number");
+            }
+            else
+            {
+                System.out.println("The given number :: "+a+" is a ODD number");
+            }
+            System.out.print("Do you want to Continue(Enter your choice) :: ");
+            c=in.next().charAt(0);
+        }
+        while(c=='y'||c=='Y');
+    }
+}

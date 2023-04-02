@@ -1,0 +1,15 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("a = ");
+        int a=in.nextInt();
+        System.out.print("b = ");
+        int b=in.nextInt();
+        System.out.print("c= ");
+        int c=in.nextInt();
+        System.out.println("Smallest Number: "+((a < b) ? (a < c ? a : c) : (b < c ? b : c)));
+        System.out.println("Largest  Number: "+((a > b) ? (a > c ? a : c) : (b > c ? b : c)));
+        System.out.println("Average of all three numbers: "+(a+b+c)/3);
+    }
+}

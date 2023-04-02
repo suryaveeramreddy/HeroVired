@@ -1,0 +1,13 @@
+import java.util.Scanner;
+ class Main {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Enter string::");
+        String s=in.next();
+        System.out.print("Starting index :");
+        int st=in.nextInt();
+        System.out.print("Ending index:");
+        int en=in.nextInt();
+        System.out.println("subString of "+s+" from "+st+" to "+en+" is: "+s.substring(st, en+1));
+    }
+}

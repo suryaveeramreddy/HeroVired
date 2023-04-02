@@ -1,0 +1,38 @@
+import java.util.Scanner;
+class Main {
+public static void main(String[] args) {
+   Scanner in=new Scanner(System.in);
+   System.out.println("Enter the marks secured::");
+   float smarks=in.nextFloat();
+   System.out.println("Enter total marks::");
+   int tmarks=in.nextInt();
+   float percentage=(smarks/tmarks)*100;
+   char grade;
+   float gpa;
+   if(90<=percentage && 100>=percentage){
+    grade='A';
+    gpa=4;
+   }
+   else if(80<=percentage && 89>=percentage)
+   {
+    grade='B';
+    gpa=3;
+   }
+   else if(70<=percentage && 79>=percentage)
+   {
+    grade='C';
+    gpa=2;
+   }
+   else if(60<=percentage && 69>=percentage)
+   {
+    grade='D';
+    gpa=1;
+   }
+   else{
+    grade='F';
+    gpa=0;
+   }
+   System.out.println("Calculated percentage::"+percentage);
+   System.out.println("Calucalted grade "+grade+" && GPA = "+gpa);
+ }    
+}
