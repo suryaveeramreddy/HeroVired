@@ -1,0 +1,47 @@
+import java.util.*;
+class   Main {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter no of superset elements ::");
+        int n1=in.nextInt();
+        System.out.println("Enter no of subset elements ::");
+        int n2=in.nextInt();
+        System.out.println("Enter superset array elements ::");
+        int asuper[]=new int[n1];
+        int asub[]=new int[n2];
+        System.out.println("Enter superset array elements ::");
+        for(int i=0;i<n1;i++)
+        {
+            asuper[i]=in.nextInt();
+        }
+        System.out.println("Enter subset array elements ::");
+        for(int i=0;i<n2;i++)
+        {
+            asub[i]=in.nextInt();
+        }
+        HashMap<Integer,Integer> h=new HashMap<>();
+        for(int i=0;i<n1;i++)
+        {
+            if(h.containsKey(asuper[i])==false)
+            {
+                h.put(asuper[i],1);
+            }
+            else
+            {
+                int val=h.get(asuper[i]);
+                h.put(asuper[i],val+1);
+            }
+        }
+        for(int i=0;i<n2;i++)
+        {
+            if(h.containsKey(asub[i])==true)
+            {
+                System.out.println("The frequency of "+asub[i]+" is::"+h.get(asub[i]));
+            }
+            else
+            {
+                System.out.println("The frequency of "+asub[i]+" is::"+0);
+            }
+        }
+    }
+}

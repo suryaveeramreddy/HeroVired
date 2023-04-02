@@ -1,0 +1,51 @@
+import java.util.*;
+class Main{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter number of elements::");
+        int n=in.nextInt();
+        System.out.println("Enter elements of the array::");
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=in.nextInt();
+        }
+        int m=a[0];
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]>m)
+            {
+                m=a[i];
+            }
+        }
+        int b[]=new int[m+1];
+        for(int i=0;i<n;i++)
+        {
+            b[a[i]]+=1;
+        }
+        System.out.println("Array elements in ascending order::");
+        for(int i=0;i<=m;i++)
+        {
+            if(b[i]!=0)
+            {
+                for(int j=0;j<b[i];j++)
+                {
+                    System.out.printf("%d\t",i);
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("Array elements in descending order::");
+        for(int i=m;i>=0;i--)
+        {
+            if(b[i]!=0)
+            {
+                for(int j=0;j<b[i];j++)
+                {
+                    System.out.printf("%d\t",i);
+                }
+            }
+        }
+        
+    }
+}
